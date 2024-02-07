@@ -16,12 +16,6 @@ variable "attach_lb_log_delivery_policy" {
   default     = false
 }
 
-variable "attach_access_log_delivery_policy" {
-  description = "Controls if S3 bucket should have S3 access log delivery policy attached"
-  type        = bool
-  default     = false
-}
-
 variable "attach_deny_insecure_transport_policy" {
   description = "Controls if S3 bucket should have deny non-SSL transport policy attached"
   type        = bool
@@ -52,12 +46,6 @@ variable "attach_inventory_destination_policy" {
   default     = false
 }
 
-variable "attach_analytics_destination_policy" {
-  description = "Controls if S3 bucket should have bucket analytics destination policy attached."
-  type        = bool
-  default     = false
-}
-
 variable "attach_deny_incorrect_encryption_headers" {
   description = "Controls if S3 bucket should deny incorrect encryption headers policy attached."
   type        = bool
@@ -68,12 +56,6 @@ variable "attach_deny_incorrect_kms_key_sse" {
   description = "Controls if S3 bucket policy should deny usage of incorrect KMS key SSE."
   type        = bool
   default     = false
-}
-
-variable "allowed_kms_key_arn" {
-  description = "The ARN of KMS key which should be allowed in PutObject"
-  type        = string
-  default     = null
 }
 
 variable "attach_deny_unencrypted_object_uploads" {
@@ -154,18 +136,6 @@ variable "logging" {
   default     = {}
 }
 
-variable "access_log_delivery_policy_source_buckets" {
-  description = "(Optional) List of S3 bucket ARNs wich should be allowed to deliver access logs to this bucket."
-  type        = list(string)
-  default     = []
-}
-
-variable "access_log_delivery_policy_source_accounts" {
-  description = "(Optional) List of AWS Account IDs should be allowed to deliver access logs to this bucket."
-  type        = list(string)
-  default     = []
-}
-
 variable "grant" {
   description = "An ACL policy grant. Conflicts with `acl`"
   type        = any
@@ -208,12 +178,6 @@ variable "intelligent_tiering" {
   default     = {}
 }
 
-variable "object_lock_configuration" {
-  description = "Map containing S3 object locking configuration."
-  type        = any
-  default     = {}
-}
-
 variable "metric_configuration" {
   description = "Map containing bucket metric configuration."
   type        = any
@@ -226,46 +190,10 @@ variable "inventory_configuration" {
   default     = {}
 }
 
-variable "inventory_source_account_id" {
-  description = "The inventory source account id."
-  type        = string
-  default     = null
-}
-
-variable "inventory_source_bucket_arn" {
-  description = "The inventory source bucket ARN."
-  type        = string
-  default     = null
-}
-
-variable "inventory_self_source_destination" {
-  description = "Whether or not the inventory source bucket is also the destination bucket."
-  type        = bool
-  default     = false
-}
-
 variable "analytics_configuration" {
   description = "Map containing bucket analytics configuration."
   type        = any
   default     = {}
-}
-
-variable "analytics_source_account_id" {
-  description = "The analytics source account id."
-  type        = string
-  default     = null
-}
-
-variable "analytics_source_bucket_arn" {
-  description = "The analytics source bucket ARN."
-  type        = string
-  default     = null
-}
-
-variable "analytics_self_source_destination" {
-  description = "Whether or not the analytics source bucket is also the destination bucket."
-  type        = bool
-  default     = false
 }
 
 variable "object_lock_enabled" {
