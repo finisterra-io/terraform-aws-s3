@@ -263,15 +263,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
         }
       }
 
-      # Max 1 block - filter - without any key arguments or tags
-      dynamic "filter" {
-        for_each = length(try(flatten([rule.value.filter]), [])) == 0 ? [true] : []
-
-        content {
-          #          prefix = ""
-        }
-      }
-
       # Max 1 block - filter - with one key argument, a single tag, or a prefix
       dynamic "filter" {
         for_each = [
