@@ -134,10 +134,11 @@ variable "logging" {
   description = "Map containing access bucket logging configuration."
   type = object({
     target_bucket = string
-    target_object_key_format = list(object({
-      partitioned_prefix = list(string)
-      simple_prefix      = list(any)
-    }))
+    target_prefix = string
+    target_object_key_format = optional(list(object({
+      partitioned_prefix = optional(list(string))
+      simple_prefix      = optional(list(any))
+    })))
   })
   default = null
 }
