@@ -132,9 +132,16 @@ variable "versioning" {
 
 variable "logging" {
   description = "Map containing access bucket logging configuration."
-  type        = map(string)
-  default     = {}
+  type = object({
+    target_bucket = string
+    target_object_key_format = list(object({
+      partitioned_prefix = list(string)
+      simple_prefix      = list(any)
+    }))
+  })
+  default = null
 }
+
 
 variable "grant" {
   description = "An ACL policy grant. Conflicts with `acl`"
