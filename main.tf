@@ -21,12 +21,33 @@ resource "aws_s3_bucket" "this" {
 }
 
 resource "aws_s3_bucket_logging" "this" {
-  count = local.create_bucket && length(keys(var.logging)) > 0 ? 1 : 0
+  count = local.create_bucket && var.logging != null ? 1 : 0
 
   bucket = aws_s3_bucket.this[0].id
 
-  target_bucket = var.logging["target_bucket"]
-  target_prefix = try(var.logging["target_prefix"], "")
+  target_bucket = var.logging.target_bucket
+  target_prefix = try(var.logging.target_prefix, "")
+
+  dynamic "target_object_key_format" {
+    for_each = lookup(var.logging, "target_object_key_format", null) != null ? var.logging.target_object_key_format : []
+
+    content {
+      dynamic "partitioned_prefix" {
+        for_each = try(target_object_key_format.value.partitioned_prefix, [])
+
+        content {
+          partition_date_source = partitioned_prefix.value.partition_date_source
+        }
+      }
+
+      dynamic "simple_prefix" {
+        for_each = try(target_object_key_format.value.simple_prefix, [])
+
+        content {
+        }
+      }
+    }
+  }
 }
 
 resource "aws_s3_bucket_acl" "this" {
