@@ -13,7 +13,7 @@
  * - **Flexible Input and Output Options**: Extensive inputs for custom configurations and detailed outputs for resource management.
  * ## Usage
  * 
- * If you wnat your code in minutes and not in days you can use *finisterra* and it will simply read you S3 buckets and generate the code necesarry to call this module.
+ * If you want your code in minutes and not in days, you can use [finisterra](finisterra.io), and it will simply read your S3 buckets and generate the code necessary to call this module.
  * 
  * Here is how to do it:
  * 
