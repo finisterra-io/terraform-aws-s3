@@ -1,5 +1,18 @@
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+# AWS S3 Bucket Management with Terraform Module
+
+This Terraform module for AWS S3 equips engineers with a robust toolkit for automating the configuration and management of AWS S3 buckets. Tailored for scalability and flexibility, it is designed to cater to a wide array of storage needs, from simple setups to complex infrastructures.
+
+### Key Features:
+
+- **Comprehensive Bucket Configuration**: Control over access policies, encryption, CORS, versioning, and more.
+- **Security and Compliance**: Features to enforce policies on encryption headers, block public access, and manage object ownership.
+- **Lifecycle Management**: Automation of lifecycle rules for efficient storage management.
+- **Logging and Monitoring**: Configuration of bucket logging and metrics for improved visibility and auditing.
+- **Cross-Region Replication**: Support for replication configuration to meet disaster recovery and data locality requirements.
+- **Flexible Input and Output Options**: Extensive inputs for custom configurations and detailed outputs for resource management.
+
 ## Requirements
 
 | Name | Version |
