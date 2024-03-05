@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.4](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.3...v1.0.4) (2024-03-05)
+
+
+### Bug Fixes
+
+* docs ([8915f11](https://github.com/finisterra-io/terraform-aws-s3/commit/8915f11b3dc6b2ca454fb03c0a7ac3c5d977dda6))
+
 ### [1.0.3](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.2...v1.0.3) (2024-02-16)
 
 
