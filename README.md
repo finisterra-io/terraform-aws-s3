@@ -11,7 +11,7 @@ Here is how to do it:
 
 ```bash
 pip install finisterra
-finisterra -p aws -m aws
+finisterra -p aws -m s3
 ```
 
 ## Key Features:
