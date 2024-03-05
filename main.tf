@@ -1,3 +1,29 @@
+/**
+ * # AWS S3 Bucket Management with Terraform Module
+ * 
+ * This Terraform module for AWS S3 equips engineers with a robust toolkit for automating the configuration and management of AWS S3 buckets. Tailored for scalability and flexibility, it is designed to cater to a wide array of storage needs, from simple setups to complex infrastructures.
+ * ## Usage
+ * 
+ * If you want your code in minutes and not in days, you can use [finisterra](https://github.com/finisterra-io/finisterra), and it will simply read your S3 buckets and generate the code necessary to call this module.
+ * 
+ * Here is how to do it:
+ * 
+ * ```bash
+ * pip install finisterra
+ * finisterra -p aws -m s3
+ * ```
+ * 
+ * <img src="./s3.svg" alt="S3 Terraform module" width="600">
+ * 
+ * ## Key Features:
+ * 
+ * - **Comprehensive Bucket Configuration**: Control over access policies, encryption, CORS, versioning, and more.
+ * - **Security and Compliance**: Features to enforce policies on encryption headers, block public access, and manage object ownership.
+ * - **Lifecycle Management**: Automation of lifecycle rules for efficient storage management.
+ * - **Logging and Monitoring**: Configuration of bucket logging and metrics for improved visibility and auditing.
+ * - **Cross-Region Replication**: Support for replication configuration to meet disaster recovery and data locality requirements.
+ * - **Flexible Input and Output Options**: Extensive inputs for custom configurations and detailed outputs for resource management.
+ */
 data "aws_caller_identity" "current" {}
 locals {
   create_bucket = var.create_bucket
