@@ -12,7 +12,7 @@ Here is how to do it:
 pip install finisterra
 finisterra -p aws -m s3
 ```
-<img src="./s3.svg" alt="S3 Terraform module" width="600" height="600">
+<img src="./s3.svg" alt="S3 Terraform module" width="600">
 
 ## Key Features:
 
