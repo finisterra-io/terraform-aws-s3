@@ -12,8 +12,9 @@ Here is how to do it:
 pip install finisterra
 finisterra -p aws -m s3
 ```
-![Alt text](./s3-terraform-module.svg)
+![S3 Terraform module](./s3.svg)
 <img src="./s3.svg">
+
 ## Key Features:
 
 - **Comprehensive Bucket Configuration**: Control over access policies, encryption, CORS, versioning, and more.
