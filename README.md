@@ -1,4 +1,3 @@
-![s3](https://github.com/finisterra-io/terraform-aws-s3/assets/129223291/5abd24be-5d8e-4e67-9411-f0d7a816bc3f)
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 # AWS S3 Bucket Management with Terraform Module
 
