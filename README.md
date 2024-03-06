@@ -13,7 +13,7 @@ pip install finisterra
 finisterra -p aws -m s3
 ```
 
-<img src="./s3.svg" alt="S3 Terraform module" width="600">
+<div style="position: relative; padding-bottom: 45.02344971339239%; height: 0;"><iframe src="https://www.loom.com/embed/b2208c8cbb63465eb762f3c449267430?sid=e27f6e9f-a325-4d88-b765-c8236faa9408" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Key Features:
 
