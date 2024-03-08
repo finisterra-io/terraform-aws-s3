@@ -1,7 +1,7 @@
 name: "Lock Threads"
 
 on:
-  workflow_disptach:
+  workflow_dispatch:
 
 jobs:
   lock:
