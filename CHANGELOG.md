@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.5](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.4...v1.0.5) (2024-03-18)
+
+
+### Bug Fixes
+
+* add tfsec ([54ddff0](https://github.com/finisterra-io/terraform-aws-s3/commit/54ddff095390847663c3ebfae05977f968d9084a))
+
 ### [1.0.4](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.3...v1.0.4) (2024-03-05)
 
 
