@@ -38,7 +38,6 @@ locals {
 
 
 #already in aws_s3_bucket_server_side_encryption_configuration, aws_s3_bucket_logging, aws_s3_bucket_logging
-#tfsec:ignore:aws-s3-enable-bucket-encryption tfsec:ignore:aws-s3-encryption-customer-key tfsec:ignore:aws-s3-enable-bucket-logging tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "this" {
   count = local.create_bucket ? 1 : 0
 
