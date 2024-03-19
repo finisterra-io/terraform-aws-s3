@@ -38,6 +38,7 @@ locals {
 
 
 #already in aws_s3_bucket_server_side_encryption_configuration, aws_s3_bucket_logging, aws_s3_bucket_logging
+#trivy:ignore:avd-aws-0132 trivy:ignore:avd-aws-0089 trivy:ignore:avd-aws-0090 trivy:ignore:avd-aws-0088
 resource "aws_s3_bucket" "this" {
   count = local.create_bucket ? 1 : 0
 
