@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.6](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.5...v1.0.6) (2024-03-19)
+
+
+### Bug Fixes
+
+* Add trivy ([c0e0649](https://github.com/finisterra-io/terraform-aws-s3/commit/c0e0649612023e41ca2a943b7e0e188bc18785a2))
+* Add trivy ([6b2fd25](https://github.com/finisterra-io/terraform-aws-s3/commit/6b2fd2507c323c5ebc05970f6e2e824f2afdc372))
+
 ### [1.0.5](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.4...v1.0.5) (2024-03-18)
 
 
