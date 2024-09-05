@@ -258,8 +258,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
     for_each = var.lifecycle_rule
 
     content {
-      id     = try(rule.value.id, null)
-      status = try(rule.value.enabled ? "Enabled" : "Disabled", tobool(rule.value.status) ? "Enabled" : "Disabled", title(lower(rule.value.status)))
+      id     = rule.value.ID
+      status = rule.value.Status
 
       # Max 1 block - abort_incomplete_multipart_upload
       dynamic "abort_incomplete_multipart_upload" {
