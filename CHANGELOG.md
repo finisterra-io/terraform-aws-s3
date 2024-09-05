@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.7](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.6...v1.0.7) (2024-09-05)
+
+
+### Bug Fixes
+
+* Update aws_s3_bucket_lifecycle_configuration resource in main.tf ([e1bff6a](https://github.com/finisterra-io/terraform-aws-s3/commit/e1bff6a1ad3b23e9c4d9251bae02aa6440cf34b7))
+
 ### [1.0.6](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.5...v1.0.6) (2024-03-19)
 
 
