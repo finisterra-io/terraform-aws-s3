@@ -257,6 +257,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
   dynamic "rule" {
     for_each = var.lifecycle_rule
 
+    #multi format
     content {
       id     = try(rule.value.id, rule.value.ID, null)
       status = try(rule.value.status, rule.value.Status, null) == "Enabled" ? "Enabled" : "Disabled"
