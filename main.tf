@@ -331,7 +331,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
             content {
               key   = tag.key
-              value = tag.value
+              value = can(tostring(tag.value)) ? tostring(tag.value) : try(tag.value["value"], "")
             }
           }
         }
