@@ -258,8 +258,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
     for_each = var.lifecycle_rule
 
     content {
-      id     = try(rule.value.id, null)
-      status = try(rule.value.enabled ? "Enabled" : "Disabled", tobool(rule.value.status) ? "Enabled" : "Disabled", title(lower(rule.value.status)))
+      id     = try(rule.value.id, rule.value.ID, null)
+      status = try(rule.value.status, rule.value.Status, null) == "Enabled" ? "Enabled" : "Disabled"
 
       # Max 1 block - abort_incomplete_multipart_upload
       dynamic "abort_incomplete_multipart_upload" {
@@ -269,7 +269,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
           days_after_initiation = try(abort_incomplete_multipart_upload.value.days_after_initiation, null)
         }
       }
-
 
       # Max 1 block - expiration
       dynamic "expiration" {
@@ -284,7 +283,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
       # Several blocks - transition
       dynamic "transition" {
-        for_each = try(flatten([rule.value.transition]), [])
+        for_each = try(flatten([rule.value.transition, rule.value.Transitions]), [])
 
         content {
           date          = try(transition.value.date, null)
@@ -295,7 +294,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
       # Max 1 block - noncurrent_version_expiration
       dynamic "noncurrent_version_expiration" {
-        for_each = try(flatten([rule.value.noncurrent_version_expiration]), [])
+        for_each = try(flatten([rule.value.noncurrent_version_expiration, [rule.value.NoncurrentVersionExpiration]]), [])
 
         content {
           newer_noncurrent_versions = try(noncurrent_version_expiration.value.newer_noncurrent_versions, null)
@@ -305,7 +304,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
       # Several blocks - noncurrent_version_transition
       dynamic "noncurrent_version_transition" {
-        for_each = try(flatten([rule.value.noncurrent_version_transition]), [])
+        for_each = try(flatten([rule.value.noncurrent_version_transition, rule.value.NoncurrentVersionTransitions]), [])
 
         content {
           newer_noncurrent_versions = try(noncurrent_version_transition.value.newer_noncurrent_versions, null)
