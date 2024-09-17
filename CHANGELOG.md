@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.12](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.11...v1.0.12) (2024-09-17)
+
+
+### Bug Fixes
+
+* fix-dinamyc-2 ([9a26b04](https://github.com/finisterra-io/terraform-aws-s3/commit/9a26b04619f58dc29000a3c8086536e67017e1f1))
+
 ### [1.0.11](https://github.com/finisterra-io/terraform-aws-s3/compare/v1.0.10...v1.0.11) (2024-09-17)
 
 
