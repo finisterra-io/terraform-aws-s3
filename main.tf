@@ -295,7 +295,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
       # Max 1 block - noncurrent_version_expiration
       dynamic "noncurrent_version_expiration" {
-        for_each = try(flatten([rule.value.noncurrent_version_expiration, [rule.value.NoncurrentVersionExpiration]]), [])
+        for_each = try(rule.value.noncurrent_version_expiration, [])
 
         content {
           newer_noncurrent_versions = try(noncurrent_version_expiration.value.newer_noncurrent_versions, null)
