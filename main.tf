@@ -330,8 +330,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
             for_each = try(filter.value.tags, filter.value.tag, [])
 
             content {
-              key   = tag.key
-              value = can(tostring(tag.value)) ? tostring(tag.value) : try(tag.value["value"], "")
+              key   = tag.value.key
+              value = can(tostring(tag.value.value)) ? tostring(tag.value.value) : try(tag.value["value"], "")
             }
           }
         }
